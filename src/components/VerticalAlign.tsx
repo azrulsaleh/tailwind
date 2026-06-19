@@ -12,11 +12,9 @@ export const VerticalAlign = ({ isOpen, toggleOpen }: VerticalAlignProps) => {
 				onChange={toggleOpen}
 			/>
 			<label htmlFor="verticalAlignId">vertical-align</label>
-			<div className={`toggleList
-				${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-			`}>
-				<div className="overflow-hidden">
-					<ul className={`${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+			<div className={`toggleList ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+				<div className={`${isOpen ? "overflow-visible" : "overflow-hidden"}`}>
+					<ul className={`${isOpen ? "scale-none" : "scale-0"}`}>
 						<li className="align-text-bottom" data-tip="vertical-align: text-bottom;">align-text-bottom</li>
 						<li className="align-text-top" data-tip="vertical-align: text-top;">align-text-top</li>
 					</ul>

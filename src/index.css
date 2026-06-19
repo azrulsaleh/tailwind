@@ -36,15 +36,16 @@ h1 {
 
 button {
 	@apply
-		bg-sky-800 text-white
+		bg-sky-950 text-white
+		border border-sky-700
 		w-full rounded-4xl px-4 py-2
 		;
 }
 button:hover {
-	@apply bg-sky-700;
+	@apply bg-neutral-950 border-neutral-700;
 }
 button:active {
-	@apply bg-sky-600;
+	@apply bg-neutral-900 border-neutral-600;
 }
 
 input {
@@ -52,20 +53,21 @@ input {
 }
 label {
 	@apply
-		block min-h-1 bg-neutral-900 rounded-4xl
+		block min-h-1 bg-cyan-950 rounded-4xl
+		border border-cyan-800
 		px-4 py-2 text-center text-white
-		transition-all
+		transition-all duration-150
 		;
 }
 label:hover {
-	@apply bg-neutral-800;
+	@apply bg-neutral-950 border-neutral-700;
 }
 input:checked + label {
 	@apply rounded-none;
 }
 
 ul {
-	@apply transform transition-all duration-200 ease-in-out ;
+	@apply origin-top transition-all duration-75 ease-out;
 }
 
 li {

@@ -12,11 +12,9 @@ export const TextAlign = ({ isOpen, toggleOpen }: TextAlignProps) => {
 				onChange={toggleOpen}
 			/>
 			<label htmlFor="textAlignId">text-align</label>
-			<div className={`toggleList
-				${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-			`}>
-				<div className="overflow-hidden">
-					<ul className={`${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+			<div className={`toggleList ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+				<div className={`${isOpen ? "overflow-visible" : "overflow-hidden"}`}>
+					<ul className={`${isOpen ? "scale-none" : "scale-0"}`}>
 						<li className="text-left" data-tip="text-align: left;">text-left</li>
 						<li	className="text-center" data-tip="text-align: center;">text-center</li>
 						<li	className="text-right" data-tip="text-align: right;">text-right</li>

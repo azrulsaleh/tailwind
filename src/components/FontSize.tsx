@@ -12,11 +12,9 @@ export const FontSize = ({ isOpen, toggleOpen }: FontSizeProps) => {
 				onChange={toggleOpen}
 			/>
 			<label htmlFor="fontSizeId">font-size + text-align</label>
-			<div className={`toggleList
-				${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-			`}>
-				<div className="overflow-hidden">
-					<ul className={`${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+			<div className={`toggleList ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+				<div className={`${isOpen ? "overflow-visible" : "overflow-hidden"}`}>
+					<ul className={`${isOpen ? "scale-none" : "scale-0"}`}>
 						<li className="text-xs"
 							data-tip="font-size: var(--text-xs); /* 0.75rem = 12px */
 							line-height: var(--tw-leading, var(--text-xs--line-height));"

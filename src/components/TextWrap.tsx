@@ -12,11 +12,9 @@ export const TextWrap = ({ isOpen, toggleOpen }: TextWrapProps) => {
 				onChange={toggleOpen}
 			/>
 			<label htmlFor="textWrapId">text-wrap</label>
-			<div className={`toggleList
-				${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-			`}>
-				<div className="overflow-hidden">
-					<ul className={`${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+			<div className={`toggleList ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+				<div className={`${isOpen ? "overflow-visible" : "overflow-hidden"}`}>
+					<ul className={`${isOpen ? "scale-none" : "scale-0"}`}>
 						<li className="text-balance" data-tip="text-wrap: balance;">text-balance</li>
 						<li className="text-nowrap" data-tip="text-wrap: nowrap;">text-nowrap</li>
 						<li className="text-pretty" data-tip="text-wrap: pretty;">text-pretty</li>

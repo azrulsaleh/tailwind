@@ -12,11 +12,9 @@ export const Color = ({ isOpen, toggleOpen }: ColorProps) => {
 				onChange={toggleOpen}
 			/>
 			<label htmlFor="colorId">color</label>
-			<div className={`toggleList
-				${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
-			`}>
-				<div className="overflow-hidden">
-					<ul className={`${isOpen ? "translate-y-0" : "-translate-y-full"}`}>
+			<div className={`toggleList ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
+				<div className={`${isOpen ? "overflow-visible" : "overflow-hidden"}`}>
+					<ul className={`${isOpen ? "scale-none" : "scale-0"}`}>
 						<li className="text-inherit" data-tip="color: inherit;">text-inherit</li>
 						<li className="text-transparent"
 							data-tip="'text-transparent'
