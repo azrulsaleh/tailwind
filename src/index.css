@@ -94,7 +94,7 @@ li::after {
 	content-[""]
 	bottom-[calc(100%-var(--arrow-size))]
 	origin-top
-	border-(length:var(--arrow-size))
+	border-[length:var(--arrow-size)]
 	border-transparent border-t-tip
 	;
 }
