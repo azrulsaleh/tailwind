@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+	--color-tip: var(--color-sky-800);
+	--arrow-size: 10px;
+}
+
+body,
+html,
+#root {
+	@apply bg-linear-to-r from-amber-500 to-violet-500;
+}
+header,
+main,
+footer {
+	@apply
+		bg-linear-to-r from-amber-500 to-violet-500
+		border-[0.5px] border-black/50
+		min-w-75 max-w-150 min-h-2.5 p-5 mx-auto
+		;
+}
+header,
+footer {
+	@apply my-5;
+}
+main {
+	@apply flex flex-col;
+}
+section {
+	@apply w-full min-h-1;
+}
+
+h1 {
+	@apply text-3xl text-center font-bold;
+}
+
+button {
+	@apply
+		bg-sky-800 text-white
+		w-full rounded-4xl px-4 py-2
+		;
+}
+button:hover {
+	@apply bg-sky-700;
+}
+button:active {
+	@apply bg-sky-600;
+}
+
+input {
+	@apply opacity-0;
+}
+label {
+	@apply
+		block min-h-1 bg-neutral-900 rounded-4xl
+		px-4 py-2 text-center text-white
+		transition-all
+		;
+}
+label:hover {
+	@apply bg-neutral-800;
+}
+input:checked + label {
+	@apply rounded-none;
+}
+
+ul {
+	@apply transform transition-all duration-200 ease-in-out ;
+}
+
+li {
+	@apply min-h-12.5 border border-t-0 relative;
+}
+li::before,
+li::after {
+	@apply
+		absolute z-10
+		-translate-x-1/2 left-1/2
+		pointer-events-none /* prevent tooltip from flickering if mouse overlaps */
+		scale-0 opacity-0
+		transition-all ease-out duration-200
+		;
+}
+li::before {
+  @apply
+	content-[attr(data-tip)]
+	px-4 py-2 w-max max-w-full bg-tip rounded-xl text-base text-center text-white
+	bottom-[calc(100%+var(--arrow-size))] origin-bottom /* position above */
+	whitespace-pre-line /* allows multiple lines */
+	;
+}
+li::after {
+  @apply
+	content-[""]
+	bottom-[calc(100%-var(--arrow-size))]
+	origin-top
+	border-(length:var(--arrow-size))
+	border-transparent border-t-tip
+	;
+}
+li:hover::before,
+li:hover::after {
+	@apply scale-100 opacity-100;
+}
+
+.toggleList {
+	@apply grid transition-all duration-200 ease-in-out;
+}
